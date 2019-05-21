@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="starter-template" data-toggle="buttons">
+    <p class="lead">select your sign</p>
+    <div class="btn-group special btn-group-toggle btn-group-lg">
+      <label class="btn btn-outline-primary active"><input type="radio" name="options" id="aries" autocomplete="off" checked>♈&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="taurus" autocomplete="off">♉&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="gemini" autocomplete="off">♊&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="cancer" autocomplete="off">♋&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="leo" autocomplete="off">♌&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="virgo" autocomplete="off">♍&#xFE0E;</label>
+    </div>
+    <br>
+    <div class="btn-group special btn-group-toggle btn-group-lg">
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="libra" autocomplete="off">♎&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="scorpio" autocomplete="off">♏&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="saggitarius" autocomplete="off">♐&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="capricorn" autocomplete="off">♑&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="aquarius" autocomplete="off">♒&#xFE0E;</label>
+      <label class="btn btn-outline-primary"><input type="radio" name="options" id="pisces" autocomplete="off">♓&#xFE0E;</label>
+    </div>
+  </div>
+  <div class="starter-template">
+    <button type="button" id="show" class="btn btn-outline-primary btn-lg">read my horoscope</button>
+  </div>
+  <div class="starter-template animate fadeIn" id="horoscope">
+    <h2>everything is going to be okay</h2>
+  </div>
+{% endblock %}

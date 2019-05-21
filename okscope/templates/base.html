@@ -17,42 +17,26 @@
   <!-- Local CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   
-  <title>{% block title %}{% endblock %}Okay-scope</title>
+  <title>OK-scope</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#show").click(function(){
+        $(".btn-outline-primary").attr("disabled", true);
+        $("#horoscope").show();
+      });
+    });
+  </script>
 </head>
 
-<nav class="rounded-top">
-  <h1>Okay-scope</h1>
-  <ul>
-    <li><a href="{{ url_for('okay') }}">OK</a>
-  </ul>
+<nav class="navbar navbar-expand-md navbar-primary bg-primary fixed-top">
+  <h1 class="nav-header">OK-scope</h1>
+  <a href="{{ url }}" class="btn btn-outline-light ml-auto">{{ nav_button }}</a>
 </nav>
-<section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
-  {% block content %}
-  <div data-toggle="buttons">
-  <div class="btn-group special btn-group-toggle btn-group-lg">
-    <label class="btn btn-outline-primary active"><input type="radio" name="options" id="option1" autocomplete="off" checked>♈&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option2" autocomplete="off">♉&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option3" autocomplete="off">♊&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option4" autocomplete="off">♋&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option5" autocomplete="off">♌&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option6" autocomplete="off">♍&#xFE0E;</label>
-  </div>
-  <br>
-  <div class="btn-group special btn-group-toggle btn-group-lg">
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option7" autocomplete="off">♎&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option8" autocomplete="off">♏&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option9" autocomplete="off">♐&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option10" autocomplete="off">♑&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option11" autocomplete="off">♒&#xFE0E;</label>
-    <label class="btn btn-outline-primary"><input type="radio" name="options" id="option12" autocomplete="off">♓&#xFE0E;</label>
-  </div>
-  </div>
-  {% endblock %}
-</section>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</html>
+
+<main role="main" class="container">
+  {% block content %}{% endblock %}
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</main>
