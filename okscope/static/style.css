@@ -18,6 +18,13 @@ body {
   flex: 1
 }
 
+a {
+  color: var(--pink);
+}
+a:hover {
+  color: var(--pink);
+}
+
 #horoscope { 
   display: none;
 }
